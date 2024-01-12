@@ -9,10 +9,17 @@ const client = new Client({
 });
 client.on("messageCreate", (message) => {
   if (message.author.bot) return;
-  message.reply({
-    content: "hi from bot",
-  });
+  if (message.content.startsWith("create")) [1];
+  return message.reply({ content: "generating short id for " + url });
+});
+message.reply({
+  content: "hi from bot",
 });
 client.login(
-  "MTE5NTMzMjM5NDAxODk0Mjk4Ng.G7LuPc.1n9PfHgxeH7ymAmF11Hz5dMK2unKMe3Wz2E4Ys"
+  "MTE5NTMzMjM5NDAxODk0Mjk4Ng.G47v4p.UjOqW-W3FeXgXJCkX2wKRwbyBn62SCp1EHWIbk"
 );
+
+client.on("interactionCreate", (interaction) => {
+  console.log(interaction);
+  interaction.reply("pong");
+});
